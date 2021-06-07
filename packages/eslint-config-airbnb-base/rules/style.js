@@ -14,8 +14,8 @@ module.exports = {
     "array-element-newline": ["off", { multiline: true, minItems: 3 }],
 
     // enforce spacing inside array brackets
-    // KEEP, move to 'warn' to allow auto-fix on save
-    "array-bracket-spacing": ["warn", "never"],
+    // KEEP
+    "array-bracket-spacing": ["error", "never"],
 
     // enforce spacing inside single-line blocks
     // https://eslint.org/docs/rules/block-spacing
@@ -23,8 +23,8 @@ module.exports = {
     "block-spacing": ["error", "always"],
 
     // enforce one true brace style
-    // KEEP, move to 'warn' to allow auto-fix on save
-    "brace-style": ["warn", "1tbs", { allowSingleLine: true }],
+    // KEEP
+    "brace-style": ["error", "1tbs", { allowSingleLine: true }],
 
     // require camel case names
     // KEEP, would prefer to keep as 'error' to disallow auto-fix. Force the developer to manually choose a proper variable name
@@ -65,13 +65,13 @@ module.exports = {
     ],
 
     // enforce spacing before and after comma
-    // KEEP - Move to 'warn' to allow for auto-fix
-    "comma-spacing": ["warn", { before: false, after: true }],
+    // KEEP
+    "comma-spacing": ["error", { before: false, after: true }],
 
     // enforce one true comma style
-    // KEEP, move to 'warn' to allow for auto-fix
+    // KEEP
     "comma-style": [
-      "warn",
+      "error",
       "last",
       {
         exceptions: {
@@ -91,16 +91,16 @@ module.exports = {
     ],
 
     // disallow padding inside computed properties
-    // KEEP, move to 'warn' to allow for auto-fix
-    "computed-property-spacing": ["warn", "never"],
+    // KEEP
+    "computed-property-spacing": ["error", "never"],
 
     // enforces consistent naming when capturing the current execution context
     // DISABLE: We can keep this off, we don't do any aliasing of 'this', since we use arrow functions everywhere and those inherit the parent scope
     "consistent-this": "off",
 
     // enforce newline at the end of file, with no multiple empty lines
-    // KEEP, move to 'warn' to allow for auto-fix
-    "eol-last": ["warn", "always"],
+    // KEEP
+    "eol-last": ["error", "always"],
 
     // https://eslint.org/docs/rules/function-call-argument-newline
     // TODO: enable, semver-minor, once eslint v6.2 is required (which is a major)
@@ -110,8 +110,8 @@ module.exports = {
 
     // enforce spacing between functions and their invocations
     // https://eslint.org/docs/rules/func-call-spacing
-    // KEEP, move to 'warn' to allow for auto-fix
-    "func-call-spacing": ["warn", "never"],
+    // KEEP
+    "func-call-spacing": ["error", "never"],
 
     // requires function names to match the name of the variable or property to which they are
     // assigned
@@ -139,8 +139,8 @@ module.exports = {
 
     // enforce consistent line breaks inside function parentheses
     // https://eslint.org/docs/rules/function-paren-newline
-    // KEEP, move to 'warn' to allow for auto-fix
-    "function-paren-newline": ["warn", "consistent"],
+    // KEEP
+    "function-paren-newline": ["error", "consistent"],
 
     // Blacklist certain identifiers to prevent them being used
     // https://eslint.org/docs/rules/id-blacklist
@@ -164,10 +164,10 @@ module.exports = {
 
     // Enforce the location of arrow function bodies with implicit returns
     // https://eslint.org/docs/rules/implicit-arrow-linebreak
-    // KEEP, move to 'warn' to allow for autofix
+    // KEEP
     // Generally I agree with this rule, if an anonymous function returns an implicit expression, I'd prefer to see that stay on the same line
     // ex: const bleh = (arg) => someFunc(arg);
-    "implicit-arrow-linebreak": ["warn", "beside"],
+    "implicit-arrow-linebreak": ["error", "beside"],
 
     // this option sets a specific tab width for your code
     // https://eslint.org/docs/rules/indent
@@ -253,9 +253,9 @@ module.exports = {
     "key-spacing": ["error", { beforeColon: false, afterColon: true }],
 
     // require a space before & after certain keywords
-    // KEEP, move to 'warn' to allow auto-fix
+    // KEEP
     "keyword-spacing": [
-      "warn",
+      "error",
       {
         before: true,
         after: true,
@@ -287,9 +287,9 @@ module.exports = {
 
     // require or disallow an empty line between class members
     // https://eslint.org/docs/rules/lines-between-class-members
-    // KEEP, move to 'warn' to allow auto-fix
+    // KEEP
     "lines-between-class-members": [
-      "warn",
+      "error",
       "always",
       { exceptAfterSingleLine: false },
     ],
@@ -420,8 +420,8 @@ module.exports = {
 
     // disallow the omission of parentheses when invoking a constructor with no arguments
     // https://eslint.org/docs/rules/new-parens
-    // KEEP, move to 'warn' to allow auto-fix
-    "new-parens": "warn",
+    // KEEP
+    "new-parens": "error",
 
     // allow/disallow an empty newline after var statement
     // KEEP OFF
@@ -506,7 +506,7 @@ module.exports = {
 
     // disallow multiple empty lines, only one newline at the end, and no new lines at the beginning
     // https://eslint.org/docs/rules/no-multiple-empty-lines
-    // KEEP, move to 'warn' to allow auto fix
+    // KEEP
     "no-multiple-empty-lines": ["error", { max: 1, maxBOF: 0, maxEOF: 0 }],
 
     // disallow negated conditions
@@ -555,7 +555,7 @@ module.exports = {
     ],
 
     // disallow space between function identifier and application
-    // KEEP, move to 'warn' to allow auto fix
+    // KEEP
     "no-spaced-func": "error",
 
     // disallow tab characters entirely
@@ -567,9 +567,9 @@ module.exports = {
     "no-ternary": "off",
 
     // disallow trailing whitespace at the end of lines
-    // KEEP, move to 'warn' to allow auto fix
+    // KEEP
     "no-trailing-spaces": [
-      "warn",
+      "error",
       {
         skipBlankLines: false,
         ignoreComments: false,
@@ -592,13 +592,13 @@ module.exports = {
     // disallow the use of Boolean literals in conditional expressions
     // also, prefer `a || b` over `a ? a : b`
     // https://eslint.org/docs/rules/no-unneeded-ternary
-    // KEEP, move to 'warn' to allow auto-fix
-    "no-unneeded-ternary": ["warn", { defaultAssignment: false }],
+    // KEEP
+    "no-unneeded-ternary": ["error", { defaultAssignment: false }],
 
     // disallow whitespace before properties
     // https://eslint.org/docs/rules/no-whitespace-before-property
-    // KEEP, move to 'warn' to allow auto-fix
-    "no-whitespace-before-property": "warn",
+    // KEEP
+    "no-whitespace-before-property": "error",
 
     // enforce the location of single-line statements
     // https://eslint.org/docs/rules/nonblock-statement-body-position
@@ -698,8 +698,8 @@ module.exports = {
 
     // Prefer use of an object spread over Object.assign
     // https://eslint.org/docs/rules/prefer-object-spread
-    // KEEP, move to 'warn' to allow auto-fix
-    "prefer-object-spread": "warn",
+    // KEEP
+    "prefer-object-spread": "error",
 
     // require quotes around object literal property names
     // https://eslint.org/docs/rules/quote-props.html
@@ -724,12 +724,12 @@ module.exports = {
     semi: ["error", "always"],
 
     // enforce spacing before and after semicolons
-    // KEEP, move to 'warn' to allow auto-fix
-    "semi-spacing": ["warn", { before: false, after: true }],
+    // KEEP
+    "semi-spacing": ["error", { before: false, after: true }],
 
     // Enforce location of semicolons
     // https://eslint.org/docs/rules/semi-style
-    // KEEP, move to 'warn' to allow auto-fix
+    // KEEP
     // Would like to have a discussion though, I believe Nate has thoughts on this in terms of how this affects the emitted JavaScript
     "semi-style": ["error", "last"],
 
@@ -742,8 +742,8 @@ module.exports = {
     "sort-vars": "off",
 
     // require or disallow space before blocks
-    // KEEP, move to 'warn' to allow auto-fix
-    "space-before-blocks": "warn",
+    // KEEP
+    "space-before-blocks": "error",
 
     // require or disallow space before function opening parenthesis
     // https://eslint.org/docs/rules/space-before-function-paren
@@ -765,18 +765,18 @@ module.exports = {
     ],
 
     // require or disallow spaces inside parentheses
-    // KEEP, move to 'warn' to allow auto-fix
-    "space-in-parens": ["warn", "never"],
+    // KEEP
+    "space-in-parens": ["error", "never"],
 
     // require spaces around operators
-    // KEEP, move to 'warn' to allow auto-fix
-    "space-infix-ops": "warn",
+    // KEEP
+    "space-infix-ops": "error",
 
     // Require or disallow spaces before/after unary operators
     // https://eslint.org/docs/rules/space-unary-ops
-    // KEEP, move to 'warn' to allow auto-fix
+    // KEEP
     "space-unary-ops": [
-      "warn",
+      "error",
       {
         words: true,
         nonwords: false,
@@ -786,9 +786,9 @@ module.exports = {
 
     // require or disallow a space immediately following the // or /* in a comment
     // https://eslint.org/docs/rules/spaced-comment
-    // KEEP, move to 'warn' to allow auto-fix
+    // KEEP
     "spaced-comment": [
-      "warn",
+      "error",
       "always",
       {
         line: {
@@ -805,13 +805,13 @@ module.exports = {
 
     // Enforce spacing around colons of switch statements
     // https://eslint.org/docs/rules/switch-colon-spacing
-    // KEEP, move to 'warn' to allow auto-fix
-    "switch-colon-spacing": ["warn", { after: true, before: false }],
+    // KEEP
+    "switch-colon-spacing": ["error", { after: true, before: false }],
 
     // Require or disallow spacing between template tags and their literals
     // https://eslint.org/docs/rules/template-tag-spacing
-    // SITUATIONAL ANALYSIS REQUIRED: I don't believe we use tagged template literals, but if we do, this may be worth keeping and dropping to a 'warn'
-    "template-tag-spacing": ["warn", "never"],
+    // SITUATIONAL ANALYSIS REQUIRED: I don't believe we use tagged template literals, but if we do, this may be worth keeping
+    "template-tag-spacing": ["error", "never"],
 
     // require or disallow the Unicode Byte Order Mark
     // https://eslint.org/docs/rules/unicode-bom
