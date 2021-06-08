@@ -15,6 +15,7 @@ module.exports = {
 
     // enforce that class methods use "this"
     // https://eslint.org/docs/rules/class-methods-use-this
+    // TODO: situational analysis needed
     'class-methods-use-this': ['error', {
       exceptMethods: [],
     }],
@@ -38,11 +39,11 @@ module.exports = {
     'default-param-last': 'off',
 
     // encourages use of dot notation whenever possible
-    'dot-notation': ['error', { allowKeywords: true }],
+    'dot-notation': ['warn', { allowKeywords: true }],
 
     // enforces consistent newlines before or after dots
     // https://eslint.org/docs/rules/dot-location
-    'dot-location': ['error', 'property'],
+    'dot-location': ['warn', 'property'],
 
     // require the use of === and !==
     // https://eslint.org/docs/rules/eqeqeq
@@ -98,7 +99,7 @@ module.exports = {
     'no-empty-pattern': 'error',
 
     // disallow comparisons to null without a type-checking operator
-    'no-eq-null': 'off',
+    'no-eq-null': 'warn',
 
     // disallow use of eval()
     'no-eval': 'error',
@@ -340,7 +341,7 @@ module.exports = {
 
     // https://eslint.org/docs/rules/prefer-regex-literals
     // TODO; enable, semver-minor, once eslint v6.4 is required (which is a major)
-    'prefer-regex-literals': 'off',
+    'prefer-regex-literals': 'warn',
 
     // require use of the second argument for parseInt()
     radix: 'error',
