@@ -46,11 +46,11 @@ module.exports = {
 
     // encourages use of dot notation whenever possible
     // https://eslint.org/docs/rules/dot-notation
-    'dot-notation': ['warn', { allowKeywords: true }],
+    'dot-notation': ['error', { allowKeywords: true }],
 
     // enforces consistent newlines before or after dots
     // https://eslint.org/docs/rules/dot-location
-    'dot-location': ['warn', 'property'],
+    'dot-location': ['error', 'property'],
 
     // require the use of === and !==
     // https://eslint.org/docs/rules/eqeqeq
