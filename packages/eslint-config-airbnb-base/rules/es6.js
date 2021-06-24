@@ -14,7 +14,6 @@ module.exports = {
   rules: {
     // enforces no braces where they can be omitted
     // https://eslint.org/docs/rules/arrow-body-style
-    // TODO: enable requireReturnForObjectLiteral?
     'arrow-body-style': ['error', 'as-needed', {
       requireReturnForObjectLiteral: false,
     }],
@@ -25,12 +24,13 @@ module.exports = {
 
     // require space before/after arrow function's arrow
     // https://eslint.org/docs/rules/arrow-spacing
+    // All spacing/formatting rules should be probably handled by Prettier instead, but leaving for now to indicate desired standard.
     'arrow-spacing': ['error', { before: true, after: true }],
 
     // verify super() callings in constructors
     'constructor-super': 'error',
 
-    // enforce the spacing around the * in generator functions
+    // Enforce the spacing around the * in generator functions: function* generator() {}
     // https://eslint.org/docs/rules/generator-star-spacing
     'generator-star-spacing': ['error', { before: false, after: true }],
 
@@ -53,7 +53,7 @@ module.exports = {
 
     // disallow importing from the same path more than once
     // https://eslint.org/docs/rules/no-duplicate-imports
-    // replaced by https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md
+    // replaced by https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md (assuming we're using this)
     'no-duplicate-imports': 'off',
 
     // disallow symbol constructor
@@ -62,8 +62,7 @@ module.exports = {
 
     // Disallow specified names in exports
     // https://eslint.org/docs/rules/no-restricted-exports
-    // TODO enable, semver-minor, once eslint v7 is required (which is major)
-    'no-restricted-exports': ['off', {
+    'no-restricted-exports': ['error', {
       restrictedNamedExports: [
         'default', // use `export default` to provide a default export
         'then', // this will cause tons of confusion when your module is dynamically `import()`ed
@@ -164,6 +163,7 @@ module.exports = {
 
     // import sorting
     // https://eslint.org/docs/rules/sort-imports
+    // Defer to Jarrod's work on getting similar behavior to TS-Hero
     'sort-imports': ['off', {
       ignoreCase: false,
       ignoreDeclarationSort: false,
