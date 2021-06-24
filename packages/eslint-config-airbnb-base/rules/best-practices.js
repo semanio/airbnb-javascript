@@ -18,6 +18,7 @@ module.exports = {
 
     // enforce that class methods use "this"
     // https://eslint.org/docs/rules/class-methods-use-this
+    // TODO: situational analysis needed
     'class-methods-use-this': ['error', {
       exceptMethods: [],
     }],
@@ -109,7 +110,7 @@ module.exports = {
 
     // disallow comparisons to null without a type-checking operator
     // https://eslint.org/docs/rules/no-eq-null
-    'no-eq-null': 'off',
+    'no-eq-null': 'warn',
 
     // disallow use of eval()
     // https://eslint.org/docs/rules/no-eval
@@ -383,7 +384,7 @@ module.exports = {
 
     // https://eslint.org/docs/rules/prefer-regex-literals
     // TODO; enable, semver-minor, once eslint v6.4 is required (which is a major)
-    'prefer-regex-literals': 'off',
+    'prefer-regex-literals': 'warn',
 
     // require use of the second argument for parseInt()
     // https://eslint.org/docs/rules/radix
