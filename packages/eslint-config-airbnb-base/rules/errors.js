@@ -30,11 +30,9 @@ module.exports = {
     // disallow use of constant expressions in conditions
     'no-constant-condition': 'warn',
 
-    // -- SITUATION ANALYSYS NEEDED. WARN? --
     // disallow control characters in regular expressions
     'no-control-regex': 'error',
 
-    // -- WARN? This comes in handy sometimes when developing. Do we keep it warn and if someone wants to use a debugger they have to turn the rule off? --
     // disallow use of debugger
     'no-debugger': 'error',
 
@@ -53,8 +51,7 @@ module.exports = {
     // disallow a duplicate case label.
     'no-duplicate-case': 'error',
 
-    // -- SITUATION ANALYSIS NEEDED. It does allow for empty statements when there is a comment, but is this done a lot in existing repos? --
-    // disallow empty statements
+    // disallow empty statements unless there is a comment
     'no-empty': 'error',
 
     // disallow the use of empty character classes in regular expressions
@@ -68,13 +65,13 @@ module.exports = {
     // https://eslint.org/docs/rules/no-extra-boolean-cast
     'no-extra-boolean-cast': 'error',
 
+    // -- WARN --
     // disallow unnecessary parentheses
     // https://eslint.org/docs/rules/no-extra-parens
-    // -- WARN --
     'no-extra-parens': ['off', 'all', {
       conditionalAssign: true,
       nestedBinaryExpressions: false,
-      returnAssign: false, // -- SITUATION ANALYSIS NEEDED. I'm personally not a fan of conditional assigns.  --
+      returnAssign: false,
       ignoreJSX: 'all', // delegate to eslint-plugin-react
       enforceForArrowConditionals: false,
     }],
