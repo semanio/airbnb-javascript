@@ -32,6 +32,7 @@ module.exports = {
   rules: {
     // Static analysis:
 
+    // **** this was a bit confusing at first but it essentially enforces relative imports otherwise the files will not be discoverable in the files system
     // ensure imports point to files/modules that can be resolved
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md
     'import/no-unresolved': ['error', { commonjs: true, caseSensitive: true }],
@@ -130,17 +131,21 @@ module.exports = {
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md
     'import/no-duplicates': 'error',
 
+    // **** Namespaces are useful particularly with some patterns I have encountered around StateManagement Frameworks, importing actions for example I would keep off
     // disallow namespace imports
     // TODO: enable?
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-namespace.md
     'import/no-namespace': 'off',
 
+    // **** May need additional ignore file extensions
     // Ensure consistent use of file extension within the import path
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
     'import/extensions': ['error', 'ignorePackages', {
       js: 'never',
       mjs: 'never',
       jsx: 'never',
+      ts: 'never',
+      tsx: 'never'
     }],
 
     // ensure absolute imports are above relative imports and that unassigned imports are ignored
@@ -152,9 +157,10 @@ module.exports = {
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/newline-after-import.md
     'import/newline-after-import': 'error',
 
+    // **** We had a good number of violations of this rule, but seems easy enough to comply, its simple to fix but could be 100s of files maybe a warn?
     // Require modules with a single export to use a default export
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md
-    'import/prefer-default-export': 'error',
+    'import/prefer-default-export': 'off',
 
     // Restrict which files can be imported in a given folder
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-restricted-paths.md
@@ -164,6 +170,7 @@ module.exports = {
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/max-dependencies.md
     'import/max-dependencies': ['off', { max: 10 }],
 
+    // **** Definitely a good rule to enforce
     // Forbid import of modules using absolute paths
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-absolute-path.md
     'import/no-absolute-path': 'error',
@@ -209,6 +216,7 @@ module.exports = {
       allowObject: false,
     }],
 
+    // **** Seems unnecessarily restrictive 
     // This rule enforces that all exports are declared at the bottom of the file.
     // https://github.com/benmosher/eslint-plugin-import/blob/98acd6afd04dcb6920b81330114e146dc8532ea4/docs/rules/exports-last.md
     // TODO: enable?
