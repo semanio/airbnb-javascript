@@ -12,6 +12,7 @@ module.exports = {
     // https://eslint.org/docs/rules/no-async-promise-executor
     'no-async-promise-executor': 'error',
 
+    // -- SITUATION ANALYSIS NEEDED --
     // Disallow await inside of loops
     // https://eslint.org/docs/rules/no-await-in-loop
     'no-await-in-loop': 'error',
@@ -38,6 +39,7 @@ module.exports = {
     // disallow duplicate arguments in functions
     'no-dupe-args': 'error',
 
+    // -- ENABLE --
     // Disallow duplicate conditions in if-else-if chains
     // https://eslint.org/docs/rules/no-dupe-else-if
     // TODO: enable, semver-major
@@ -49,7 +51,7 @@ module.exports = {
     // disallow a duplicate case label.
     'no-duplicate-case': 'error',
 
-    // disallow empty statements
+    // disallow empty statements unless there is a comment
     'no-empty': 'error',
 
     // disallow the use of empty character classes in regular expressions
@@ -58,10 +60,12 @@ module.exports = {
     // disallow assigning to the exception in a catch block
     'no-ex-assign': 'error',
 
+    // -- SITUATION ANALYSIS NEEDED. I'm torn on this. Though technically unnecessary, some may prefer the explicit boolean cast.
     // disallow double-negation boolean casts in a boolean context
     // https://eslint.org/docs/rules/no-extra-boolean-cast
     'no-extra-boolean-cast': 'error',
 
+    // -- WARN --
     // disallow unnecessary parentheses
     // https://eslint.org/docs/rules/no-extra-parens
     'no-extra-parens': ['off', 'all', {
@@ -78,6 +82,7 @@ module.exports = {
     // disallow overwriting functions written as function declarations
     'no-func-assign': 'error',
 
+    // -- ENABLE --
     // https://eslint.org/docs/rules/no-import-assign
     // TODO: enable, semver-minor, once eslint v6.4 is required (which is a major)
     'no-import-assign': 'off',
@@ -91,6 +96,7 @@ module.exports = {
     // disallow irregular whitespace outside of strings and comments
     'no-irregular-whitespace': 'error',
 
+    // -- ENABLE --
     // Disallow Number Literals That Lose Precision
     // https://eslint.org/docs/rules/no-loss-of-precision
     // TODO: enable, semver-minor, once eslint v7.1 is required (which is major)
@@ -103,11 +109,13 @@ module.exports = {
     // disallow the use of object properties of the global object (Math and JSON) as functions
     'no-obj-calls': 'error',
 
+    // -- ENABLE --
     // Disallow returning values from Promise executor functions
     // https://eslint.org/docs/rules/no-promise-executor-return
     // TODO: enable, semver-minor, once eslint v7.3 is required (which is major)
     'no-promise-executor-return': 'off',
 
+    // -- SITUATION ANALYSIS NEEDED. RMS has ~500 usages of hasOwnProperty. While we could override there, do other projects use this as well? --
     // disallow use of Object.prototypes builtins directly
     // https://eslint.org/docs/rules/no-prototype-builtins
     'no-prototype-builtins': 'error',
@@ -115,10 +123,12 @@ module.exports = {
     // disallow multiple spaces in a regular expression literal
     'no-regex-spaces': 'error',
 
+    // -- ENABLE --
     // Disallow returning values from setters
     // https://eslint.org/docs/rules/no-setter-return
     // TODO: enable, semver-major (altho the guide forbids getters/setters already)
     'no-setter-return': 'off',
+
 
     // disallow sparse arrays
     'no-sparse-arrays': 'error',
@@ -134,6 +144,7 @@ module.exports = {
     // disallow unreachable statements after a return, throw, continue, or break statement
     'no-unreachable': 'error',
 
+    // -- ENABLE (for all loop types) --
     // Disallow loops with a body that allows only one iteration
     // https://eslint.org/docs/rules/no-unreachable-loop
     // TODO: enable, semver-minor, once eslint v7.3 is required (which is major)
@@ -149,20 +160,24 @@ module.exports = {
     // https://eslint.org/docs/rules/no-unsafe-negation
     'no-unsafe-negation': 'error',
 
+    // -- ENABLE -- 
     // disallow use of optional chaining in contexts where the undefined value is not allowed
     // https://eslint.org/docs/rules/no-unsafe-optional-chaining
     // TODO: enable, semver-minor, once eslint v7.15 is required (which is major)
     'no-unsafe-optional-chaining': ['off', { disallowArithmeticOperators: true }],
 
+    // -- ENABLE --
     // Disallow useless backreferences in regular expressions
     // https://eslint.org/docs/rules/no-useless-backreference
     // TODO: enable, semver-minor, once eslint v7 is required (which is major)
     'no-useless-backreference': 'off',
 
+    // -- REMOVE, DEPRECATED --
     // disallow negation of the left operand of an in expression
     // deprecated in favor of no-unsafe-negation
     'no-negated-in-lhs': 'off',
 
+    // -- SITUATION ANALYSIS NEEDED. Probably keep disabled since they recommend it. -- 
     // Disallow assignments that can lead to race conditions due to usage of await or yield
     // https://eslint.org/docs/rules/require-atomic-updates
     // note: not enabled because it is very buggy
@@ -171,6 +186,7 @@ module.exports = {
     // disallow comparisons with the value NaN
     'use-isnan': 'error',
 
+    // -- REMOVE, DEPRECATED -- 
     // ensure JSDoc comments are valid
     // https://eslint.org/docs/rules/valid-jsdoc
     'valid-jsdoc': 'off',
