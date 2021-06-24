@@ -149,7 +149,7 @@ module.exports = {
       flatTernaryExpressions: false,
       // list derived from https://github.com/benjamn/ast-types/blob/HEAD/def/jsx.js
       ignoredNodes: ['JSXElement', 'JSXElement > *', 'JSXAttribute', 'JSXIdentifier', 'JSXNamespacedName', 'JSXMemberExpression', 'JSXSpreadAttribute', 'JSXExpressionContainer', 'JSXOpeningElement', 'JSXClosingElement', 'JSXFragment', 'JSXOpeningFragment', 'JSXClosingFragment', 'JSXText', 'JSXEmptyExpression', 'JSXSpreadChild'],
-      ignoreComments: false,
+      ignoreComments: false
     }],
 
     // specify whether double or single quotes should be used in JSX attributes
@@ -166,8 +166,8 @@ module.exports = {
       overrides: {
         return: { after: true },
         throw: { after: true },
-        case: { after: true },
-      },
+        case: { after: true }
+      }
     }],
 
     // enforce position of line comments
@@ -202,15 +202,12 @@ module.exports = {
 
     // specify the maximum length of a line in your program
     // https://eslint.org/docs/rules/max-len
-    // DISABLE, can be managed by Prettier configuration: printWidth: 100
-    // Personally I think 100 is fine, we're in 2021 and widescreen monitors exist, so 80 character limits are archaic now,
-    // but if we set it to 120 I worry about lines getting a bit too long for readability..
     'max-len': ['off', 100, 2, {
       ignoreUrls: true,
       ignoreComments: false,
       ignoreRegExpLiterals: true,
       ignoreStrings: true,
-      ignoreTemplateLiterals: true,
+      ignoreTemplateLiterals: true
     }],
 
     // specify the max number of lines in a file
@@ -218,7 +215,7 @@ module.exports = {
     'max-lines': ['off', {
       max: 300,
       skipBlankLines: true,
-      skipComments: true,
+      skipComments: true
     }],
 
     // enforce a maximum function length
@@ -227,7 +224,7 @@ module.exports = {
       max: 50,
       skipBlankLines: true,
       skipComments: true,
-      IIFEs: true,
+      IIFEs: true
     }],
 
     // specify the maximum depth callbacks can be nested
@@ -257,11 +254,7 @@ module.exports = {
       newIsCap: true,
       newIsCapExceptions: [],
       capIsNew: false,
-      capIsNewExceptions: [
-        'Immutable.Map',
-        'Immutable.Set',
-        'Immutable.List',
-      ],
+      capIsNewExceptions: ['Immutable.Map', 'Immutable.Set', 'Immutable.List'],
     }],
 
     // disallow the omission of parentheses when invoking a constructor with no arguments
@@ -313,7 +306,7 @@ module.exports = {
         ['==', '!=', '===', '!=='],
         ['&&', '||'],
       ],
-      allowSamePrecedence: false,
+      allowSamePrecedence: false
     }],
 
     // disallow mixed spaces and tabs for indentation
@@ -483,7 +476,6 @@ module.exports = {
     'sort-vars': 'off',
 
     // require or disallow space before blocks
-    // KEEP
     'space-before-blocks': 'error',
 
     // require or disallow space before function opening parenthesis
@@ -505,7 +497,7 @@ module.exports = {
     'space-unary-ops': ['error', {
       words: true,
       nonwords: false,
-      overrides: {},
+      overrides: {}
     }],
 
     // require or disallow a space immediately following the // or /* in a comment
@@ -519,7 +511,7 @@ module.exports = {
         exceptions: ['-', '+'],
         markers: ['=', '!', ':', '::'], // space here to support sprockets directives and flow comment types
         balanced: true,
-      },
+      }
     }],
 
     // Enforce spacing around colons of switch statements
