@@ -78,7 +78,7 @@ module.exports = {
 
     // https://eslint.org/docs/rules/function-call-argument-newline
     // TODO: enable, semver-minor, once eslint v6.2 is required (which is a major)
-    'function-call-argument-newline': ['off', 'consistent'],
+    'function-call-argument-newline': ['warn', 'consistent'],
 
     // enforce spacing between functions and their invocations
     // https://eslint.org/docs/rules/func-call-spacing
