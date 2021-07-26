@@ -15,7 +15,7 @@ module.exports = {
 
     // enforce spacing inside single-line blocks
     // https://eslint.org/docs/rules/block-spacing
-    'block-spacing': ['error', 'always'],
+    'block-spacing': ['off', 'always'],
 
     // enforce one true brace style
     'brace-style': ['error', '1tbs', { allowSingleLine: true }],
@@ -39,7 +39,7 @@ module.exports = {
     }],
 
     // require trailing commas in multiline object literals
-    'comma-dangle': ['error', {
+    'comma-dangle': ['off', {
       arrays: 'always-multiline',
       objects: 'always-multiline',
       imports: 'always-multiline',
@@ -78,7 +78,7 @@ module.exports = {
 
     // https://eslint.org/docs/rules/function-call-argument-newline
     // TODO: enable, semver-minor, once eslint v6.2 is required (which is a major)
-    'function-call-argument-newline': ['off', 'consistent'],
+    'function-call-argument-newline': ['warn', 'consistent'],
 
     // enforce spacing between functions and their invocations
     // https://eslint.org/docs/rules/func-call-spacing
@@ -202,12 +202,12 @@ module.exports = {
 
     // specify the maximum length of a line in your program
     // https://eslint.org/docs/rules/max-len
-    'max-len': ['error', 100, 2, {
+    'max-len': ['off', 100, 2, {
       ignoreUrls: true,
       ignoreComments: false,
       ignoreRegExpLiterals: true,
       ignoreStrings: true,
-      ignoreTemplateLiterals: true,
+      ignoreTemplateLiterals: true
     }],
 
     // specify the max number of lines in a file
@@ -224,7 +224,7 @@ module.exports = {
       max: 50,
       skipBlankLines: true,
       skipComments: true,
-      IIFEs: true,
+      IIFEs: true
     }],
 
     // specify the maximum depth callbacks can be nested
@@ -242,7 +242,7 @@ module.exports = {
 
     // enforce a particular style for multiline comments
     // https://eslint.org/docs/rules/multiline-comment-style
-    'multiline-comment-style': ['off', 'starred-block'],
+    'multiline-comment-style': ['warn', 'starred-block'],
 
     // require multiline ternary
     // https://eslint.org/docs/rules/multiline-ternary
@@ -273,7 +273,7 @@ module.exports = {
     'newline-per-chained-call': ['error', { ignoreChainWithDepth: 4 }],
 
     // disallow use of the Array constructor
-    'no-array-constructor': 'error',
+    'no-array-constructor': 'warn',
 
     // disallow use of bitwise operators
     // https://eslint.org/docs/rules/no-bitwise
@@ -360,7 +360,7 @@ module.exports = {
     'no-spaced-func': 'error',
 
     // disallow tab characters entirely
-    'no-tabs': 'error',
+    'no-tabs': 'off',
 
     // disallow the use of ternary operators
     'no-ternary': 'off',
@@ -432,8 +432,8 @@ module.exports = {
       classes: 'never',
       switches: 'never',
     }, {
-      allowSingleLineBlocks: true,
-    }],
+        allowSingleLineBlocks: true,
+      }],
 
     // Require or disallow padding lines between statements
     // https://eslint.org/docs/rules/padding-line-between-statements
@@ -450,17 +450,17 @@ module.exports = {
 
     // require quotes around object literal property names
     // https://eslint.org/docs/rules/quote-props.html
-    'quote-props': ['error', 'as-needed', { keywords: false, unnecessary: true, numbers: false }],
+    'quote-props': ['off', 'as-needed', { keywords: false, unnecessary: true, numbers: false }],
 
     // specify whether double or single quotes should be used
-    quotes: ['error', 'single', { avoidEscape: true }],
+    quotes: ['off', 'single', { avoidEscape: true }],
 
     // do not require jsdoc
     // https://eslint.org/docs/rules/require-jsdoc
     'require-jsdoc': 'off',
 
     // require or disallow use of semicolons instead of ASI
-    semi: ['error', 'always'],
+    semi: ['off', 'always'],
 
     // enforce spacing before and after semicolons
     'semi-spacing': ['error', { before: false, after: true }],
@@ -483,7 +483,7 @@ module.exports = {
     'space-before-function-paren': ['error', {
       anonymous: 'always',
       named: 'never',
-      asyncArrow: 'always'
+      asyncArrow: 'always',
     }],
 
     // require or disallow spaces inside parentheses
@@ -497,8 +497,7 @@ module.exports = {
     'space-unary-ops': ['error', {
       words: true,
       nonwords: false,
-      overrides: {
-      },
+      overrides: {}
     }],
 
     // require or disallow a space immediately following the // or /* in a comment
